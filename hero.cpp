@@ -56,13 +56,13 @@ void Player::openInventory(Inventory& inventory) {
 }
 
 unsigned long Player::Heal(){
-	heal = ((pow(playerLv, 1.9) + rand() % (playerLv * 10) + 1) + ((playerMana)) / 2);
+	heal = pow(playerLv, 1.9) + rand() % (playerLv * 10) + 1;
 	playerHP+=heal;
 	return heal;
 }
 
 void Player::attack(Enemy& enemy){
-	damage = ((playerATK * 2) + (rand() % (playerLv * 10) + 1)) + 1;
+	damage = playerATK * 2 + rand() % (playerLv * 10) + 1;
 	enemy.takeDamage(damage);
 }
 

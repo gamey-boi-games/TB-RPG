@@ -38,7 +38,7 @@ void Enemy::attack(Player& player){
 }
 
 unsigned long Enemy::Damage(){
-	enemyDMG = (1 + pow((enemyATK / 9) , 1.5) + rand() % 10 + 1);
+	enemyDMG = enemyATK + rand() % (enemyATK / 2) + 1;
 	return enemyDMG;
 }
 

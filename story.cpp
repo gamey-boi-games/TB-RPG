@@ -8,6 +8,7 @@
 #include "dragon.hpp"
 #include "mainmenu.hpp"
 #include "level.hpp"
+#include "inventory.hpp"
 
 
 int main(int argc, char const *argv[]) {
@@ -28,6 +29,9 @@ int main(int argc, char const *argv[]) {
 		}*/
 		//create an object of Player so playing through the game makes a little more sense
 		Player player;
+
+		//construct inventory, and it iit already exists it'll be loaded up in the main menu
+		Inventory inventory;
 
 		//construct a MainMenu object to initialize said main menu
 		MainMenu game;

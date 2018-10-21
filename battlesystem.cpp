@@ -19,7 +19,7 @@ int battle(Player& player, Area& area) {
 		enemy.emplace_back(std::make_unique<Enemy>());
 	}
 	std::cout << "number of enemies to fight: " << enemy.size() << "\n";
-	for (int x = number_of_enemies; x > 0 ; x--) {
+	for (int x = number_of_enemies - 1; x > -1 ; x--) {
 
 		std::cout << "Area base level is: " << area.getAreaBase() << "\n";
 
@@ -86,7 +86,7 @@ int battle(Player& player, Area& area) {
 						<< "\nHealth: " << enemy[x]->getHealth() << "\nAttack: " << enemy[x]->getATK()
 						<< "\nDefense: " << enemy[x]->getDEF() << "\nAverage damage dealt per hit: " << enemy[x]->Damage();
 					std::cout << "\n";
-					enemy.erase(enemy.getPosition(x));
+					enemy.erase(enemy.begin() + x);
 
 					//iterate from the number of enemies to 0 and delete each defeated enemy. Shouldn't get an out of bounds error in theory
 
